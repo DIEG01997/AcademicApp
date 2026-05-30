@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AcademicApp</string>
+    <string name="register_title">Registro de Alumno</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="terms_conditions">Acepto los términos y condiciones</string>
+    <string name="email_error">Correo inválido o no pertenece al dominio @educarex.es</string>
+    <string name="password_error">La contraseña debe tener al menos una mayúscula, un número y un símbolo</string>
+    <string name="field_required">Este campo es obligatorio</string>
+    <string name="birthdate_error">La fecha de nacimiento no puede ser anterior al 1900</string>
+
+    <!-- Array para los cursos -->
+    <string-array name="cursos_array">
+        <item>1º</item>
+        <item>2º</item>
+    </string-array>
+
+    <!-- Array para los ciclos -->
+    <string-array name="ciclos_array">
+        <item>DAM</item>
+        <item>DAW</item>
+    </string-array>
+
+</resources>

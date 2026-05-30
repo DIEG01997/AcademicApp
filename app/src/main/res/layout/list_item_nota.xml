@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/surfaceTintColor"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:id="@+id/txtNotaAsignatura"
+            style="@style/CardTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtNotaUnidad"
+            style="@style/CardBodyStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/txtNotaInstrumento"
+            style="@style/TextSecondaryStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtNotaCalificacion"
+                style="@style/CardBodyStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/primaryColor" />
+
+            <TextView
+                android:id="@+id/txtNotaPonderacion"
+                style="@style/CardBodyStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/textColorSecondary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_wave"
+    android:fillViewport="true"
+    tools:context=".activities.RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/TitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Registro de alumno"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgRegisterLogo"
+            android:layout_width="190dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Logo AcademicApp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_academic_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+        <TextView
+            android:id="@+id/txtRegisterSubtitle"
+            style="@style/CardBodyStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Completa tus datos académicos para crear la cuenta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgRegisterLogo" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtRegisterSubtitle"
+            app:strokeColor="@color/surfaceTintColor"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtNombreLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/primaryColor"
+                    app:hintTextColor="@color/textColorSecondary">
+
+                    <EditText
+                        android:id="@+id/edtNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombre"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/textColorPrimary"
+                        android:textColorHint="@color/textColorSecondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtApellidosLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/primaryColor"
+                    app:hintTextColor="@color/textColorSecondary">
+
+                    <EditText
+                        android:id="@+id/edtApellidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellidos"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/textColorPrimary"
+                        android:textColorHint="@color/textColorSecondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtCorreoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/primaryColor"
+                    app:hintTextColor="@color/textColorSecondary">
+
+                    <EditText
+                        android:id="@+id/edtCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Correo educativo"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/textColorPrimary"
+                        android:textColorHint="@color/textColorSecondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtTelefonoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/primaryColor"
+                    app:hintTextColor="@color/textColorSecondary">
+
+                    <EditText
+                        android:id="@+id/edtTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Teléfono (opcional)"
+                        android:inputType="phone"
+                        android:textColor="@color/textColorPrimary"
+                        android:textColorHint="@color/textColorSecondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtFechaNacimientoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/primaryColor"
+                    app:hintTextColor="@color/textColorSecondary">
+
+                    <EditText
+                        android:id="@+id/edtFechaNacimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="Fecha de nacimiento"
+                        android:inputType="none"
+                        android:textColor="@color/textColorPrimary"
+                        android:textColorHint="@color/textColorSecondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtPasswordLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/primaryColor"
+                    app:hintTextColor="@color/textColorSecondary">
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Contraseña"
+                        android:inputType="textPassword"
+                        android:textColor="@color/textColorPrimary"
+                        android:textColorHint="@color/textColorSecondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/txtCiclo"
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Ciclo" />
+
+                <Spinner
+                    android:id="@+id/spinnerCiclo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp" />
+
+                <TextView
+                    android:id="@+id/txtCurso"
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Curso" />
+
+                <Spinner
+                    android:id="@+id/spinnerCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTerms"
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Acepto los términos y condiciones" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btnRegister"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Registrarse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardRegister" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

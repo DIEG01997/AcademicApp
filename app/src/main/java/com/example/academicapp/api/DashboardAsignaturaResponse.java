@@ -1,0 +1,79 @@
+package com.example.academicapp.api;
+
+import java.util.List;
+
+public class DashboardAsignaturaResponse {
+
+    private Long idAsignatura;
+    private String nombreAsignatura;
+    private String mediaAsignatura;
+    private Integer unidadesComputadas;
+    private Integer unidadesEvaluadas;
+    private Integer unidadesSuspensas;
+    private String porcentajeSuspensos;
+    private List<DashboardUnidadResponse> unidades;
+
+    public Long getIdAsignatura() {
+        return idAsignatura;
+    }
+
+    public void setIdAsignatura(Long idAsignatura) {
+        this.idAsignatura = idAsignatura;
+    }
+
+    public String getNombreAsignatura() {
+        return nombreAsignatura;
+    }
+
+    public void setNombreAsignatura(String nombreAsignatura) {
+        this.nombreAsignatura = nombreAsignatura;
+    }
+
+    public String getMediaAsignatura() {
+        return mediaAsignatura;
+    }
+
+    public void setMediaAsignatura(String mediaAsignatura) {
+        this.mediaAsignatura = mediaAsignatura;
+    }
+
+    public Integer getUnidadesComputadas() {
+        return unidadesComputadas;
+    }
+
+    public void setUnidadesComputadas(Integer unidadesComputadas) {
+        this.unidadesComputadas = unidadesComputadas;
+    }
+
+    public Integer getUnidadesEvaluadas() {
+        return unidadesEvaluadas;
+    }
+
+    public void setUnidadesEvaluadas(Integer unidadesEvaluadas) {
+        this.unidadesEvaluadas = unidadesEvaluadas;
+    }
+
+    public Integer getUnidadesSuspensas() {
+        return unidadesSuspensas;
+    }
+
+    public void setUnidadesSuspensas(Integer unidadesSuspensas) {
+        this.unidadesSuspensas = unidadesSuspensas;
+    }
+
+    public String getPorcentajeSuspensos() {
+        return porcentajeSuspensos;
+    }
+
+    public void setPorcentajeSuspensos(String porcentajeSuspensos) {
+        this.porcentajeSuspensos = porcentajeSuspensos;
+    }
+
+    public List<DashboardUnidadResponse> getUnidades() {
+        return unidades;
+    }
+
+    public void setUnidades(List<DashboardUnidadResponse> unidades) {
+        this.unidades = unidades;
+    }
+}

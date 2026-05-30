@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema claro -->
+    <style name="Theme.AcademicApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Colores principales -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryColorDark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryColorDark</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <!-- Colores para el fondo y la superficie -->
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:statusBarColor">@color/primaryColorDark</item>
+        <item name="android:navigationBarColor">@color/surfaceColor</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Estilo del texto -->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+
+        <!-- Estilo de los botones -->
+        <item name="buttonStyle">@style/ButtonStyle</item>
+
+        <!-- Estilo para TextInput -->
+        <item name="textInputStyle">@style/TextInputStyle</item>
+
+        <!-- Estilo de los títulos -->
+        <item name="titleTextStyle">@style/TitleStyle</item>
+
+        <!-- Estilo de los textos secundarios -->
+        <item name="android:textAppearance">@style/TextSecondaryStyle</item>
+
+        <!-- Estilo de los campos de entrada (EditText) -->
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+    </style>
+
+</resources>

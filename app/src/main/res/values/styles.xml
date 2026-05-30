@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:statusBarColor">@color/primaryColorDark</item>
+        <item name="android:navigationBarColor">@color/surfaceColor</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:backgroundTint">@color/primaryColor</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">160dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="TextInputStyle">
+        <item name="android:backgroundTint">@color/primaryColor</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="TitleStyle">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSecondaryStyle">
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CardTitleStyle">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CardBodyStyle">
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:backgroundTint">@color/primaryColor</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorHint">@color/textColorSecondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="CircleImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

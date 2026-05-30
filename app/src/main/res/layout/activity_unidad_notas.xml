@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_wave"
+    tools:context=".activities.UnidadNotasActivity">
+
+    <ImageButton
+        android:id="@+id/btnBackUnidadNotas"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Volver a unidades"
+        android:padding="10dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTituloUnidadNotas"
+        style="@style/TitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="24dp"
+        android:text="Notas de la unidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBackUnidadNotas"
+        app:layout_constraintTop_toTopOf="@id/btnBackUnidadNotas" />
+
+    <TextView
+        android:id="@+id/txtSubtituloUnidadNotas"
+        style="@style/TextSecondaryStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="Mant&#233;n pulsada una nota para editarla o eliminarla."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloUnidadNotas" />
+
+    <ProgressBar
+        android:id="@+id/progressBarUnidadNotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSubtituloUnidadNotas"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtEmptyUnidadNotas"
+        style="@style/CardBodyStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_empty_state_card"
+        android:gravity="center"
+        android:text="Todav&#237;a no hay notas registradas en esta unidad.\n\nPulsa el bot&#243;n + para a&#241;adir la primera calificaci&#243;n y empezar a construir tu evaluaci&#243;n."
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBarUnidadNotas" />
+
+    <ListView
+        android:id="@+id/listUnidadNotas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBarUnidadNotas"
+        tools:listitem="@layout/list_item_nota" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCrearNotaUnidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="18dp"
+        android:contentDescription="Añadir nota"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/secondaryColor"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@android:color/white" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/surfaceColor"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemRippleColor="@color/surfaceTintColor"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_bottom_nav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

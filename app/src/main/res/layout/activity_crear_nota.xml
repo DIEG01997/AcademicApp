@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_wave"
+    android:fillViewport="true"
+    tools:context=".activities.CrearNotaActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/txtTituloCrearNota"
+            style="@style/TitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Crear nota"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCrearNota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTituloCrearNota"
+            app:strokeColor="@color/surfaceTintColor"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtInfoCrearNota"
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Selecciona los datos de la nota." />
+
+                <TextView
+                    android:id="@+id/txtAsignaturaContextoCrearNota"
+                    style="@style/CardTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone"
+                    tools:text="Programaci&#243;n"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txtUnidadContextoCrearNota"
+                    style="@style/TextSecondaryStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone"
+                    tools:text="Unidad 1: Introducci&#243;n"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txtLabelAsignaturaCrearNota"
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Asignatura" />
+
+                <Spinner
+                    android:id="@+id/spinnerAsignatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/txtLabelUnidadCrearNota"
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Unidad did&#225;ctica" />
+
+                <Spinner
+                    android:id="@+id/spinnerUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    style="@style/CardBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Instrumento de evaluaci&#243;n" />
+
+                <Spinner
+                    android:id="@+id/spinnerInstrumento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+                <EditText
+                    android:id="@+id/edtCalificacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:digits="0123456789.,"
+                    android:hint="Calificaci&#243;n (0-10)"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/edtPonderacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:digits="0123456789.,"
+                    android:hint="Ponderaci&#243;n (0-100)"
+                    android:inputType="text" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ProgressBar
+            android:id="@+id/progressBarCrearNota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardCrearNota"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnGuardarNota"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Guardar nota"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBarCrearNota" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

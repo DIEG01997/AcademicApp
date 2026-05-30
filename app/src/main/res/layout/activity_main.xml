@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_wave"
+    tools:context=".activities.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="96dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="32dp">
+
+            <ImageView
+                android:id="@+id/imgHomeLogo"
+                android:layout_width="260dp"
+                android:layout_height="232dp"
+                android:contentDescription="Logo AcademicApp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_academic_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Hola"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgHomeLogo" />
+
+            <TextView
+                android:id="@+id/txtHomeSubtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Organiza tus notas, consulta tus unidades y entiende tu progreso sin perder tiempo."
+                android:textColor="@color/textColorSecondary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtWelcome" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHomeActions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHomeSubtitle"
+                app:strokeColor="@color/surfaceTintColor"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Empieza por aquí"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtHomeCourse"
+                        style="@style/CardBodyStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cargando curso..." />
+
+                    <TextView
+                        style="@style/CardBodyStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Usa la barra inferior para moverte por la app. El botón de chat te lleva al grupo de tu curso." />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardHomeActions"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/surfaceColor"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemRippleColor="@color/surfaceTintColor"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/main_bottom_nav" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNuevaNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="74dp"
+        android:contentDescription="Abrir chat del curso"
+        android:src="@drawable/ic_chat_bubble"
+        app:backgroundTint="@color/secondaryColor"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtChatUnreadBadge"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/bg_evaluacion_badge"
+        android:elevation="18dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:translationZ="18dp"
+        android:visibility="gone"
+        tools:text="3"
+        tools:visibility="visible" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

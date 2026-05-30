@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_wave"
+    tools:context=".activities.EstadisticasActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollEstadisticas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/txtTituloEstadisticas"
+                style="@style/TitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Progreso acad&#233;mico"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAyudaEstadisticas"
+                style="@style/TextSecondaryStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Visualiza tu rendimiento global, tu evoluci&#243;n por trimestre y el detalle de cada asignatura."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloEstadisticas" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardGraficasProgreso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAyudaEstadisticas"
+                app:strokeColor="@color/surfaceTintColor"
+                app:strokeWidth="1dp">
+
+                <com.example.academicapp.views.ProgressChartView
+                    android:id="@+id/chartProgreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="472dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtTituloAsignaturasEstadisticas"
+                style="@style/CardTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Asignaturas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardGraficasProgreso" />
+
+            <TextView
+                android:id="@+id/txtEmptyEstadisticas"
+                style="@style/TextSecondaryStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_empty_state_card"
+                android:gravity="center"
+                android:text="Todav&#237;a no hay datos suficientes para mostrar gr&#225;ficas por asignatura.\n\nA medida que registres notas en las unidades, este espacio se convertir&#225; en un resumen visual de tu rendimiento."
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloAsignaturasEstadisticas" />
+
+            <LinearLayout
+                android:id="@+id/layoutAsignaturasEstadisticas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloAsignaturasEstadisticas" />
+
+            <ProgressBar
+                android:id="@+id/progressBarEstadisticas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutAsignaturasEstadisticas"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/surfaceColor"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemRippleColor="@color/surfaceTintColor"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_bottom_nav" />
+</androidx.constraintlayout.widget.ConstraintLayout>

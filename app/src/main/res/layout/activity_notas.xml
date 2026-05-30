@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_wave"
+    tools:context=".activities.NotasActivity">
+
+    <TextView
+        android:id="@+id/txtTituloNotas"
+        style="@style/TitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Evaluaci&#243;n"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtAyudaNotas"
+        style="@style/TextSecondaryStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="Consulta c&#243;mo quedar&#237;a tu bolet&#237;n por evaluaci&#243;n con las notas registradas hasta ahora."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloNotas" />
+
+    <ProgressBar
+        android:id="@+id/progressBarNotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtAyudaNotas"
+        tools:visibility="visible" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollEvaluaciones"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        android:clipToPadding="false"
+        android:fillViewport="false"
+        android:overScrollMode="ifContentScrolls"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBarNotas">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEvaluaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/surfaceTintColor"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:id="@+id/layoutEvaluaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    style="@style/CardTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Evaluaciones" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleEvaluacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:checkedButton="@id/btnEvaluacion1"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEvaluacion1"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="1 Eval"
+                        android:textColor="@color/primaryColor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEvaluacion2"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="2 Eval"
+                        android:textColor="@color/primaryColor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEvaluacion3"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="3 Eval"
+                        android:textColor="@color/primaryColor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEvaluacionFinal"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="Final"
+                        android:textColor="@color/primaryColor"
+                        android:visibility="gone" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/txtEmptyEvaluaciones"
+                    style="@style/TextSecondaryStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_empty_state_card"
+                    android:gravity="center"
+                    android:text="Cuando registres notas, aqu&#237; ver&#225;s tu evaluaci&#243;n redondeada por asignatura.\n\nCada trimestre se actualiza con las unidades did&#225;cticas que ya tengan calificaci&#243;n." />
+
+                <Button
+                    android:id="@+id/btnDescargarBoletin"
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Descargar boletin PDF" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/surfaceColor"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemRippleColor="@color/surfaceTintColor"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_bottom_nav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

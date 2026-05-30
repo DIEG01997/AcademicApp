@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/edtNombrePerfil"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtApellidosPerfil"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellidos"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtTelefonoPerfil"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/edtFechaNacimientoPerfil"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:hint="Fecha de nacimiento (DD-MM-AAAA)"
+        android:inputType="none" />
+</LinearLayout>

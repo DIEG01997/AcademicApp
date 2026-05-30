@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/CardBodyStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esta acción eliminará tu cuenta y las notas asociadas. No se puede deshacer." />
+
+    <TextView
+        style="@style/CardBodyStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Para confirmar, escribe ELIMINAR:" />
+
+    <EditText
+        android:id="@+id/edtConfirmarEliminarCuenta"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="ELIMINAR"
+        android:inputType="textCapCharacters" />
+
+</LinearLayout>
