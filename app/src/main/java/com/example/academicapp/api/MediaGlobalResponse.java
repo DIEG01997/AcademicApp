@@ -1,5 +1,8 @@
 package com.example.academicapp.api;
 
+/**
+ * DTO de respuesta recibido desde la API y usado por las pantallas Android.
+ */
 public class MediaGlobalResponse {
 
     private String mediaGlobal;

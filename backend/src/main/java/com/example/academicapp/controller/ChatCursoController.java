@@ -17,6 +17,9 @@ import com.example.academicapp.service.ChatCursoService;
 
 @RestController
 @RequestMapping("/api/chat/curso")
+/**
+ * Controlador REST que expone operaciones HTTP del backend para la app movil.
+ */
 public class ChatCursoController {
 
     private final ChatCursoService chatCursoService;

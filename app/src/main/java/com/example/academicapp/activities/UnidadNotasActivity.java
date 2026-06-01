@@ -40,6 +40,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla UnidadNotasActivity y coordinar su interfaz con la API.
+ */
 public class UnidadNotasActivity extends AppCompatActivity {
 
     private TextView txtTituloUnidadNotas;

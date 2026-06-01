@@ -59,6 +59,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla PerfilActivity y coordinar su interfaz con la API.
+ */
 public class PerfilActivity extends AppCompatActivity {
 
     private static final String PROFILE_PREFS = "academic_app_profile";

@@ -6,6 +6,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
+/**
+ * Configuracion de beans compartidos usados por la capa de seguridad y servicios.
+ */
 public class SecurityBeansConfig {
 
     @Bean

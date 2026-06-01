@@ -4,6 +4,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+/**
+ * Controlador REST que expone operaciones HTTP del backend para la app movil.
+ */
 public class TestController {
 
     @GetMapping("/api/test/protegido")

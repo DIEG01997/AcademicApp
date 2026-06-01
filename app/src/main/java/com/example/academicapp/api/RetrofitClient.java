@@ -11,11 +11,18 @@ import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Cliente Retrofit compartido que configura la URL base, conversion JSON y autenticacion Bearer.
+ */
 public class RetrofitClient {
 
     private static final String BASE_URL = normalizeBaseUrl(BuildConfig.API_BASE_URL);
     private static Retrofit retrofit;
 
+    /**
+     * Retrofit exige que la URL base termine en barra; esta normalizacion evita
+     * errores al compilar con distintas URLs de desarrollo o despliegue.
+     */
     private static String normalizeBaseUrl(String baseUrl) {
         if (baseUrl == null || baseUrl.trim().isEmpty()) {
             return "http://10.58.202.54:8080/";
@@ -29,6 +36,11 @@ public class RetrofitClient {
         if (retrofit == null) {
             SessionManager sessionManager = new SessionManager(context.getApplicationContext());
 
+            /*
+             * Todas las peticiones pasan por el mismo interceptor para adjuntar
+             * el token guardado tras el login. Asi las pantallas no tienen que
+             * preocuparse de construir manualmente la cabecera Authorization.
+             */
             Interceptor authInterceptor = chain -> {
                 Request originalRequest = chain.request();
                 Request.Builder requestBuilder = originalRequest.newBuilder();
@@ -51,7 +63,7 @@ public class RetrofitClient {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .client(okHttpClient)
-                    .addConverterFactory(GsonConverterFactory.create())  // Usamos Gson para convertir los objetos a JSON
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
         return retrofit;

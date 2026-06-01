@@ -35,6 +35,9 @@ import com.example.academicapp.repository.UnidadDidacticaRepository;
 import com.example.academicapp.service.EstadisticaService;
 
 @Service
+/**
+ * Implementacion de la logica de negocio asociada a este servicio del backend.
+ */
 public class EstadisticaServiceImpl implements EstadisticaService {
 
     private static final BigDecimal CERO = BigDecimal.ZERO;
@@ -72,6 +75,8 @@ public class EstadisticaServiceImpl implements EstadisticaService {
             return null;
         }
 
+        // Cada nota aporta segun su ponderacion; la unidad queda en escala 0-10
+        // porque las ponderaciones se guardan como porcentajes.
         return notasUnidad.stream()
                 .map(n -> n.getValorCalificacion()
                         .multiply(n.getPonderacion())
@@ -116,6 +121,8 @@ public class EstadisticaServiceImpl implements EstadisticaService {
         BigDecimal numerador = new BigDecimal(menores)
                 .add(new BigDecimal(iguales).multiply(new BigDecimal("0.5")));
 
+        // Los empates cuentan como medio caso para situar al alumno en una
+        // posicion intermedia dentro del grupo comparado.
         return numerador.multiply(CIEN)
                 .divide(new BigDecimal(valoresComparacion.size()), 2, RoundingMode.HALF_UP);
     }
@@ -139,6 +146,8 @@ public class EstadisticaServiceImpl implements EstadisticaService {
                 continue;
             }
 
+            // Solo computan las unidades que tienen alguna nota registrada; asi
+            // una unidad sin evaluar no baja artificialmente la media.
             BigDecimal notaFinalUnidad = calcularNotaFinalUnidad(notasPorUnidadId.get(unidad.getIdUnidad()));
             if (notaFinalUnidad != null) {
                 sumaNotasFinales = sumaNotasFinales.add(notaFinalUnidad);
@@ -201,6 +210,8 @@ public class EstadisticaServiceImpl implements EstadisticaService {
         Map<Long, BigDecimal> mediasPorAlumnoId = new LinkedHashMap<>();
         for (Alumno alumno : alumnosCurso) {
             Map<Long, List<Nota>> notasPorUnidadId = notasPorAlumnoYUnidad.getOrDefault(alumno.getIdAlumno(), Map.of());
+            // Se calcula la media por alumno con la misma formula usada para el
+            // alumno autenticado, manteniendo comparaciones justas.
             mediasPorAlumnoId.put(
                     alumno.getIdAlumno(),
                     calcularMediaGlobalDesdeNotas(asignaturasCurso, unidadesCurso, notasPorUnidadId)

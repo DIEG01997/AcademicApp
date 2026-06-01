@@ -10,6 +10,9 @@ import com.example.academicapp.entity.Asignatura;
 import com.example.academicapp.entity.UnidadDidactica;
 
 @Repository
+/**
+ * Repositorio Spring Data JPA que encapsula el acceso a datos de esta entidad.
+ */
 public interface UnidadDidacticaRepository extends JpaRepository<UnidadDidactica, Long> {
 
     List<UnidadDidactica> findByAsignatura_IdAsignaturaOrderByOrdenUnidadAsc(Long idAsignatura);

@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.academicapp.entity.Alumno;
 
+/**
+ * Repositorio Spring Data JPA que encapsula el acceso a datos de esta entidad.
+ */
 public interface AlumnoRepository extends JpaRepository<Alumno, Long> {
 
     Optional<Alumno> findByCorreoEducativo(String correoEducativo);

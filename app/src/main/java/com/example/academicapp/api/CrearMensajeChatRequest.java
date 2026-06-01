@@ -1,5 +1,8 @@
 package com.example.academicapp.api;
 
+/**
+ * DTO de peticion enviado desde Android al backend.
+ */
 public class CrearMensajeChatRequest {
 
     private String contenido;

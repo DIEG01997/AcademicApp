@@ -18,6 +18,9 @@ import com.example.academicapp.repository.MensajeChatCursoRepository;
 import com.example.academicapp.service.ChatCursoService;
 
 @Service
+/**
+ * Implementacion de la logica de negocio asociada a este servicio del backend.
+ */
 public class ChatCursoServiceImpl implements ChatCursoService {
 
     private final AlumnoRepository alumnoRepository;

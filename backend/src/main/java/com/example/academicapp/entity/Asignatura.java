@@ -13,6 +13,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "asignatura")
+/**
+ * Entidad JPA que representa una tabla del modelo de datos academico.
+ */
 public class Asignatura {
 
     @Id

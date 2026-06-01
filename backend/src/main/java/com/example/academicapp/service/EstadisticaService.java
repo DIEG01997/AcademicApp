@@ -12,6 +12,9 @@ import com.example.academicapp.dto.PercentilGlobalResponse;
 import com.example.academicapp.dto.PorcentajeSuspensosAsignaturaResponse;
 import com.example.academicapp.dto.PorcentajeSuspensosAsignaturasResponse;
 
+/**
+ * Interfaz de servicio que define las operaciones de negocio disponibles para los controladores.
+ */
 public interface EstadisticaService {
 
     MediaAsignaturaResponse getMediaAsignatura(String correoEducativo, Long idAsignatura);

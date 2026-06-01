@@ -14,6 +14,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "mensaje_chat_curso")
+/**
+ * Entidad JPA que representa una tabla del modelo de datos academico.
+ */
 public class MensajeChatCurso {
 
     @Id

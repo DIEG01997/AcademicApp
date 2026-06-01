@@ -2,6 +2,9 @@ package com.example.academicapp.api;
 
 import java.util.List;
 
+/**
+ * DTO de respuesta recibido desde la API y usado por las pantallas Android.
+ */
 public class DashboardAsignaturaResponse {
 
     private Long idAsignatura;

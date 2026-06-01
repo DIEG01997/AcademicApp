@@ -6,6 +6,9 @@ import com.example.academicapp.dto.ChatCursoEstadoResponse;
 import com.example.academicapp.dto.CrearMensajeChatRequest;
 import com.example.academicapp.dto.MensajeChatResponse;
 
+/**
+ * Interfaz de servicio que define las operaciones de negocio disponibles para los controladores.
+ */
 public interface ChatCursoService {
 
     List<MensajeChatResponse> getMensajes(String correoEducativo);

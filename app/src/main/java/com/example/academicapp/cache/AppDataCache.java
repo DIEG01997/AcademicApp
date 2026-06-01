@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Cache en memoria para reutilizar datos ya cargados y evitar llamadas repetidas durante la sesion.
+ */
 public final class AppDataCache {
 
     private static final long CACHE_TTL_MS = 60_000L;
@@ -28,6 +31,10 @@ public final class AppDataCache {
     private AppDataCache() {
     }
 
+    /**
+     * Garantiza que los datos cacheados pertenecen al alumno actual. Si cambia
+     * la cuenta, se limpia todo para no mezclar perfil, notas o asignaturas.
+     */
     public static void prepareFor(String email) {
         if (ownerEmail != null && ownerEmail.equals(email)) {
             return;
@@ -92,6 +99,10 @@ public final class AppDataCache {
         unidadesPorAsignatura.clear();
     }
 
+    /**
+     * Limpieza total usada en cambios de sesion y eventos donde la app debe
+     * volver a cargar datos frescos desde el backend.
+     */
     public static void clearAll() {
         ownerEmail = null;
         perfil = null;
@@ -105,6 +116,10 @@ public final class AppDataCache {
         unidadesPorAsignatura.clear();
     }
 
+    /*
+     * Las entradas caducan rapido para acelerar la navegacion sin esconder
+     * durante demasiado tiempo cambios hechos desde otra pantalla.
+     */
     private static boolean isFresh(long timestamp) {
         return timestamp > 0 && System.currentTimeMillis() - timestamp < CACHE_TTL_MS;
     }

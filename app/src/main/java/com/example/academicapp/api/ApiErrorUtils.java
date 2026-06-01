@@ -7,6 +7,9 @@ import java.io.IOException;
 
 import retrofit2.Response;
 
+/**
+ * Utilidad para traducir respuestas de error del backend a mensajes legibles para el usuario.
+ */
 public final class ApiErrorUtils {
 
     private static final Gson GSON = new Gson();

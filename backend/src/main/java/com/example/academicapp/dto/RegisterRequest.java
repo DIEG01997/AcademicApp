@@ -7,6 +7,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+/**
+ * DTO de entrada usado para validar y transportar datos recibidos desde la app movil.
+ */
 public class RegisterRequest {
 
     @NotBlank

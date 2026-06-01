@@ -2,6 +2,9 @@ package com.example.academicapp.dto;
 
 import java.time.LocalDateTime;
 
+/**
+ * DTO de salida que desacopla las entidades JPA del contrato publico de la API.
+ */
 public class ApiErrorResponse {
 
     private LocalDateTime timestamp;

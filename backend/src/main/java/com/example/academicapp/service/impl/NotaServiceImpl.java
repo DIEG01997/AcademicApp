@@ -26,6 +26,9 @@ import com.example.academicapp.repository.UnidadDidacticaRepository;
 import com.example.academicapp.service.NotaService;
 
 @Service
+/**
+ * Implementacion de la logica de negocio asociada a este servicio del backend.
+ */
 public class NotaServiceImpl implements NotaService {
 
     private final AlumnoRepository alumnoRepository;

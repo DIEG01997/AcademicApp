@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.example.academicapp.dto.ApiErrorResponse;
 
 @RestControllerAdvice
+/**
+ * Manejador global de excepciones que normaliza errores de negocio y validacion en respuestas HTTP.
+ */
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)

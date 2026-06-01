@@ -3,6 +3,9 @@ package com.example.academicapp.dto;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * DTO de salida que desacopla las entidades JPA del contrato publico de la API.
+ */
 public class NotaListadoResponse {
 
     private Long idNota;

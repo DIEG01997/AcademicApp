@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import com.example.academicapp.entity.Curso;
 import com.example.academicapp.entity.MensajeChatCurso;
 
+/**
+ * Repositorio Spring Data JPA que encapsula el acceso a datos de esta entidad.
+ */
 public interface MensajeChatCursoRepository extends JpaRepository<MensajeChatCurso, Long> {
 
     @Query("""

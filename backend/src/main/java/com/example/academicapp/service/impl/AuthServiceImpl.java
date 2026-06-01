@@ -17,6 +17,9 @@ import com.example.academicapp.security.JwtService;
 import com.example.academicapp.service.AuthService;
 
 @Service
+/**
+ * Implementacion de la logica de negocio asociada a este servicio del backend.
+ */
 public class AuthServiceImpl implements AuthService {
 
     private final AlumnoRepository alumnoRepository;
@@ -37,6 +40,8 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthResponse register(RegisterRequest request) {
 
+        // El correo educativo es el identificador de login, por eso debe ser
+        // unico antes de crear la cuenta.
         if (alumnoRepository.existsByCorreoEducativo(request.getCorreoEducativo())) {
             throw new RuntimeException("Ya existe un alumno con ese correo educativo");
         }
@@ -48,6 +53,8 @@ public class AuthServiceImpl implements AuthService {
         alumno.setNombre(request.getNombre());
         alumno.setApellidos(request.getApellidos());
         alumno.setCorreoEducativo(request.getCorreoEducativo());
+        // Nunca se guarda la contrasena en claro; solo el hash generado por
+        // BCrypt mediante el PasswordEncoder configurado.
         alumno.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         alumno.setFechaNacimiento(request.getFechaNacimiento());
         alumno.setTelefono(normalizarTelefono(request.getTelefono()));
@@ -77,6 +84,8 @@ public class AuthServiceImpl implements AuthService {
         Alumno alumno = alumnoRepository.findByCorreoEducativo(request.getCorreoEducativo())
                 .orElseThrow(() -> new RuntimeException("Credenciales incorrectas"));
 
+        // Se usa el mismo mensaje para correo inexistente y password incorrecta
+        // para no revelar que cuentas existen en la base de datos.
         if (!passwordEncoder.matches(request.getPassword(), alumno.getPasswordHash())) {
             throw new RuntimeException("Credenciales incorrectas");
         }

@@ -12,6 +12,9 @@ import com.example.academicapp.entity.Alumno;
 import com.example.academicapp.entity.Nota;
 import com.example.academicapp.entity.UnidadDidactica;
 
+/**
+ * Repositorio Spring Data JPA que encapsula el acceso a datos de esta entidad.
+ */
 public interface NotaRepository extends JpaRepository<Nota, Long> {
 
     Optional<Nota> findByAlumno_IdAlumnoAndUnidadDidactica_IdUnidadAndInstrumentoEvaluacion_IdInstrumento(

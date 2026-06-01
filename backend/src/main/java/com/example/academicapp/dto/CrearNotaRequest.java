@@ -6,6 +6,9 @@ import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 
+/**
+ * DTO de entrada usado para validar y transportar datos recibidos desde la app movil.
+ */
 public class CrearNotaRequest {
 
     @NotNull

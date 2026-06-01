@@ -4,6 +4,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
+/**
+ * DTO de entrada usado para validar y transportar datos recibidos desde la app movil.
+ */
 public class LoginRequest {
 
     @NotBlank

@@ -30,6 +30,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla AsignaturasActivity y coordinar su interfaz con la API.
+ */
 public class AsignaturasActivity extends AppCompatActivity {
 
     private TextView txtEmpty;

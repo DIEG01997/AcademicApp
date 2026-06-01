@@ -26,6 +26,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla MainActivity y coordinar su interfaz con la API.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final int TOUR_TOTAL_STEPS = 17;
@@ -114,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // La cache se segmenta por correo para que una sesion reutilizada no
+        // muestre datos pertenecientes a otro alumno.
         AppDataCache.prepareFor(sessionManager.getEmail());
         PerfilAlumnoResponse perfilCache = AppDataCache.getPerfil();
         if (perfilCache != null) {
@@ -237,6 +242,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void gestionarErrorAutenticacion(int code) {
         if (code == 401 || code == 403) {
+            // Si el backend rechaza el token, se elimina la sesion local y se
+            // fuerza un nuevo login.
             AppDataCache.clearAll();
             EstadisticasActivity.invalidateCache();
             sessionManager.clearSession();

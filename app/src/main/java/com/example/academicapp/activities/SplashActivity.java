@@ -13,6 +13,9 @@ import com.example.academicapp.R;
 import com.example.academicapp.cache.AppDataCache;
 import com.example.academicapp.session.SessionManager;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla SplashActivity y coordinar su interfaz con la API.
+ */
 public class SplashActivity extends AppCompatActivity {
 
     private static final String INSTALL_PREFS = "academic_app_install_state";
@@ -27,6 +30,8 @@ public class SplashActivity extends AppCompatActivity {
         resetSessionIfFirstRunOfVersion(sessionManager);
         Intent intent;
 
+        // La pantalla inicial decide si continuar con una sesion guardada o
+        // enviar al usuario al login.
         if (sessionManager.hasValidSession()) {
             intent = new Intent(SplashActivity.this, MainActivity.class);
         } else {
@@ -43,6 +48,8 @@ public class SplashActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(INSTALL_PREFS, MODE_PRIVATE);
         int storedVersionCode = prefs.getInt(KEY_LAST_VERSION_CODE, -1);
         if (storedVersionCode != BuildConfig.VERSION_CODE) {
+            // Al instalar una version nueva se descarta estado local para evitar
+            // inconsistencias con cambios de API, cache o modelo de datos.
             AppDataCache.clearAll();
             EstadisticasActivity.invalidateCache();
             sessionManager.clearSession();

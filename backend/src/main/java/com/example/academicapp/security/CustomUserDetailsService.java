@@ -10,6 +10,9 @@ import com.example.academicapp.repository.AlumnoRepository;
 import java.util.Collections;
 
 @Service
+/**
+ * Adaptador que carga alumnos desde base de datos para integrarlos con Spring Security.
+ */
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final AlumnoRepository alumnoRepository;

@@ -42,6 +42,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla EstadisticasActivity y coordinar su interfaz con la API.
+ */
 public class EstadisticasActivity extends AppCompatActivity {
 
     private static final long CACHE_TTL_MS = 45_000L;

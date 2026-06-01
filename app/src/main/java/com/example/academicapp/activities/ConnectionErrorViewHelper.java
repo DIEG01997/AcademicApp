@@ -16,6 +16,9 @@ import androidx.core.content.ContextCompat;
 
 import com.example.academicapp.R;
 
+/**
+ * Ayudante visual que muestra un estado de error recuperable cuando la app no puede contactar con el backend.
+ */
 final class ConnectionErrorViewHelper {
 
     private static final String TAG_CONNECTION_ERROR = "academic_app_connection_error";

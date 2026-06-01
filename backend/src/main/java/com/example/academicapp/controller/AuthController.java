@@ -17,6 +17,9 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/auth")
 @Validated
+/**
+ * Controlador REST que expone operaciones HTTP del backend para la app movil.
+ */
 public class AuthController {
 
     private final AuthService authService;

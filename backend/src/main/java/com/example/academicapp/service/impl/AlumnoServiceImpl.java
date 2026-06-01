@@ -18,6 +18,9 @@ import com.example.academicapp.repository.UnidadDidacticaRepository;
 import com.example.academicapp.service.AlumnoService;
 
 @Service
+/**
+ * Implementacion de la logica de negocio asociada a este servicio del backend.
+ */
 public class AlumnoServiceImpl implements AlumnoService {
 
     private final AlumnoRepository alumnoRepository;
@@ -37,6 +40,10 @@ public class AlumnoServiceImpl implements AlumnoService {
                 .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
     }
 
+    /*
+     * El perfil se devuelve como DTO para no exponer directamente relaciones
+     * JPA ni campos internos como el hash de password.
+     */
     private PerfilAlumnoResponse construirPerfilAlumnoResponse(Alumno alumno) {
         return new PerfilAlumnoResponse(
                 alumno.getIdAlumno(),
@@ -135,6 +142,8 @@ public class AlumnoServiceImpl implements AlumnoService {
     public List<UnidadDidacticaResponse> getUnidadesDidacticas(String correoEducativo, Long idAsignatura) {
         Alumno alumno = obtenerAlumno(correoEducativo);
 
+        // Evita que un alumno consulte unidades de asignaturas que no pertenecen
+        // a su curso aunque conozca el identificador numerico.
         boolean perteneceAlCurso = alumno.getCurso().getAsignaturas()
                 .stream()
                 .anyMatch(asignatura -> asignatura.getIdAsignatura().equals(idAsignatura));

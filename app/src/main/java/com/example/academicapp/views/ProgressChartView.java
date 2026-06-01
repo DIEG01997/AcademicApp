@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Vista personalizada Android que encapsula dibujo e interaccion especificos de AcademicApp.
+ */
 public class ProgressChartView extends View {
 
     private static final int PERCENTILE_COLOR = Color.rgb(124, 58, 237);

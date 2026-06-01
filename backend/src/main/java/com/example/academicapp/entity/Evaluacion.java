@@ -11,6 +11,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "evaluacion")
+/**
+ * Entidad JPA que representa una tabla del modelo de datos academico.
+ */
 public class Evaluacion {
 
     @Id

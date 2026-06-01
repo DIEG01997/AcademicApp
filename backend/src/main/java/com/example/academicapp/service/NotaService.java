@@ -9,6 +9,9 @@ import com.example.academicapp.dto.NotaFinalUnidadResponse;
 import com.example.academicapp.dto.NotaListadoResponse;
 import com.example.academicapp.dto.NotaResponse;
 
+/**
+ * Interfaz de servicio que define las operaciones de negocio disponibles para los controladores.
+ */
 public interface NotaService {
     List<InstrumentoEvaluacionResponse> getInstrumentosEvaluacion();
     NotaResponse crearNota(String correoEducativo, CrearNotaRequest request);

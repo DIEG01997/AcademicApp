@@ -22,6 +22,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla LoginActivity y coordinar su interfaz con la API.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
@@ -78,6 +81,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (response.isSuccessful() && response.body() != null) {
                     LoginResponse loginResponse = response.body();
+                    // Al cambiar de usuario se invalida cualquier dato cacheado
+                    // antes de guardar el nuevo token.
                     AppDataCache.clearAll();
                     EstadisticasActivity.invalidateCache();
                     sessionManager.saveSession(loginResponse.getToken(), loginResponse.getTipo(), correo);
@@ -100,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 setLoading(false);
                 Log.e(TAG, "No se pudo conectar con la API", t);
+                // onFailure representa un problema de red o transporte, no una
+                // respuesta HTTP con credenciales incorrectas.
                 ConnectionErrorViewHelper.show(LoginActivity.this, () -> intentarLogin());
             }
         });

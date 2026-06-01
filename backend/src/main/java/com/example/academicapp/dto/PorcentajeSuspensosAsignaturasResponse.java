@@ -2,6 +2,9 @@ package com.example.academicapp.dto;
 
 import java.math.BigDecimal;
 
+/**
+ * DTO de salida que desacopla las entidades JPA del contrato publico de la API.
+ */
 public class PorcentajeSuspensosAsignaturasResponse {
 
     private Integer asignaturasEvaluadas;

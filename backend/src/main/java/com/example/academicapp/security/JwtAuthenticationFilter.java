@@ -15,6 +15,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component
+/**
+ * Filtro de seguridad que extrae el JWT de la cabecera Authorization y autentica la peticion.
+ */
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
@@ -34,6 +37,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String jwt;
         final String correoEducativo;
 
+        // Si la peticion no trae Bearer token, se deja continuar para que
+        // Spring Security decida si el endpoint permite acceso anonimo.
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
@@ -45,6 +50,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (correoEducativo != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(correoEducativo);
 
+            /*
+             * Solo se crea la autenticacion si el token esta firmado con la
+             * clave del servidor, no ha caducado y pertenece al mismo correo.
+             */
             if (jwtService.isTokenValid(jwt, userDetails.getUsername())) {
                 UsernamePasswordAuthenticationToken authToken =
                         new UsernamePasswordAuthenticationToken(

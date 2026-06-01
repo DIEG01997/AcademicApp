@@ -13,6 +13,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Ayudante que sincroniza el estado del tutorial inicial entre almacenamiento local y backend.
+ */
 public final class OnboardingStateHelper {
 
     public static final String PREFS = "academic_app_onboarding";

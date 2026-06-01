@@ -11,6 +11,9 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
 @Service
+/**
+ * Servicio responsable de generar, firmar y validar tokens JWT para alumnos autenticados.
+ */
 public class JwtService {
 
     private final String secretKey;
@@ -24,6 +27,8 @@ public class JwtService {
     }
 
     public String generateToken(String correoEducativo) {
+        // El correo educativo se usa como subject para recuperar al alumno en
+        // cada peticion autenticada sin guardar estado de sesion en el servidor.
         return Jwts.builder()
                 .setSubject(correoEducativo)
                 .setIssuedAt(new Date())
@@ -54,6 +59,8 @@ public class JwtService {
     }
 
     private Key getSignInKey() {
+        // La clave debe tener longitud suficiente para HMAC; se define fuera
+        // del codigo mediante propiedades locales o variables de entorno.
         return Keys.hmacShaKeyFor(secretKey.getBytes());
     }
 }

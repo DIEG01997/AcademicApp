@@ -6,6 +6,9 @@ import android.content.Intent;
 import com.example.academicapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * Utilidad centralizada para mantener la navegacion inferior coherente entre pantallas.
+ */
 public final class NavigationHelper {
 
     private NavigationHelper() {

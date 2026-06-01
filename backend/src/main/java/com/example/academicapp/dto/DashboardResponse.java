@@ -2,6 +2,9 @@ package com.example.academicapp.dto;
 
 import java.util.List;
 
+/**
+ * DTO de salida que desacopla las entidades JPA del contrato publico de la API.
+ */
 public class DashboardResponse {
 
     private MediaGlobalResponse mediaGlobal;

@@ -11,6 +11,9 @@ import com.example.academicapp.service.NotaService;
 
 @RestController
 @RequestMapping("/api/instrumentos")
+/**
+ * Controlador REST que expone operaciones HTTP del backend para la app movil.
+ */
 public class InstrumentoController {
 
     private final NotaService notaService;

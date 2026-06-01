@@ -39,6 +39,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla ChatCursoActivity y coordinar su interfaz con la API.
+ */
 public class ChatCursoActivity extends AppCompatActivity {
 
     private static final String CHAT_PREFS = "academic_app_chat";

@@ -11,6 +11,9 @@ import retrofit2.http.Path;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
+/**
+ * Contrato Retrofit con todos los endpoints REST que consume la aplicacion movil.
+ */
 public interface ApiService {
 
     @POST("api/auth/login")

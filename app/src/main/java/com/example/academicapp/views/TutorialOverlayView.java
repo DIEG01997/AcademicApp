@@ -22,6 +22,9 @@ import androidx.core.content.ContextCompat;
 
 import com.example.academicapp.R;
 
+/**
+ * Vista personalizada Android que encapsula dibujo e interaccion especificos de AcademicApp.
+ */
 public class TutorialOverlayView extends FrameLayout {
 
     public interface Action {

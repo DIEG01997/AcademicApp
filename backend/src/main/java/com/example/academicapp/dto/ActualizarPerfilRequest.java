@@ -2,6 +2,9 @@ package com.example.academicapp.dto;
 
 import java.time.LocalDate;
 
+/**
+ * DTO de entrada usado para validar y transportar datos recibidos desde la app movil.
+ */
 public class ActualizarPerfilRequest {
 
     private String nombre;

@@ -8,6 +8,9 @@ import com.example.academicapp.dto.AsignaturaResponse;
 import com.example.academicapp.dto.PerfilAlumnoResponse;
 import com.example.academicapp.dto.UnidadDidacticaResponse;
 
+/**
+ * Interfaz de servicio que define las operaciones de negocio disponibles para los controladores.
+ */
 public interface AlumnoService {
 
     PerfilAlumnoResponse getPerfil(String correoEducativo);

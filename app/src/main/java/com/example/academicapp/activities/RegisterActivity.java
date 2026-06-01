@@ -30,6 +30,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity de la app Android encargada de gestionar la pantalla RegisterActivity y coordinar su interfaz con la API.
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText edtNombre, edtApellidos, edtCorreo, edtPassword, edtFechaNacimiento, edtTelefono;
